@@ -43,5 +43,15 @@ module InstructionMemory(Address, Instruction);
     output reg [31:0] Instruction;    // Instruction at memory location Address
     
     /* Please fill in the implementation here */
-
-endmodule
+    integer i;
+    
+    initial 
+        begin
+            for (i = 0; i < 128; i = i + 1)begin
+                Instruction [i] = i * 3;
+            end    
+        end
+     always @(*) begin 
+        Instruction[i] = Address[8:2];
+     end 
+    endmodule
